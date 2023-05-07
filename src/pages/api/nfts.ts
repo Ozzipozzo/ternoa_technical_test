@@ -16,7 +16,7 @@ const alchemy = new Alchemy(config);
 export default async function getNFTs(req: CustomApiRequest, res: NextApiResponse): Promise<void> {
   try {
     const contractAddress: string = process.env.CONTRACT_ADDRESS || '0x1';
-    const pageSize = 100;
+    const pageSize = 20;
     const pageKey = req.query.page || '0';
     const opts = {
       pageKey: pageKey,
