@@ -5,7 +5,6 @@ const ConnectWallet: React.FC = () => {
   const [accounts, setAccounts] = useState<string[]>([]);
   const [signResult, setSignResult] = useState<string>("");
   const [verifyDisabled, setVerifyDisabled] = useState<boolean>(true);
-
   const connectWalletHandler = async () => {
     if ((window as any).ethereum) {
       try {
@@ -13,7 +12,6 @@ const ConnectWallet: React.FC = () => {
           method: "eth_requestAccounts",
         });
         setAccounts(requestedAccounts);
-        personalSignHandler();
       } catch (error) {
         console.error(error);
         alert(
@@ -47,17 +45,16 @@ const ConnectWallet: React.FC = () => {
   useEffect(() => {
     if (accounts.length > 0) {
       console.log("Connected accounts:", accounts);
+       personalSignHandler();
     }
   }, [accounts]);
-  
   return (
     <>
       {accounts.length > 0 ? (
         <div className="flex items-center">
           <span className="inline-block w-2.5 h-2.5 bg-green-500 rounded-full mr-2"></span>
           <p>
-            Connected Account: {accounts[0].slice(0, 6)}...
-            {accounts[0].slice(-4)}
+            Connected Account: {accounts[0].slice(0, 6)}...{accounts[0].slice(-4)}
           </p>
         </div>
       ) : (
