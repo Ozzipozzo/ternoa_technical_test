@@ -1,6 +1,7 @@
 // src/components/Navbar.tsx
 import React from "react";
 import Link from "next/link";
+import ConnectWallet from "./ConnectWallet";
 
 const Navbar: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ const Navbar: React.FC = () => {
               <p className="text-black font-semibold">About</p>
             </Link>
           </div>
-          <div className="flex items-center space-x-4 ">
+          <div className="flex items-center space-x-4">
             <input
               type="search"
               placeholder="Search"
@@ -31,7 +32,7 @@ const Navbar: React.FC = () => {
               Upload
             </button>
             <button className="bg-white text-[#3e24b6] border border-[#3e24b6] px-4 py-2 rounded-3xl">
-              Connect Wallet
+              <ConnectWallet />
             </button>
           </div>
         </div>
