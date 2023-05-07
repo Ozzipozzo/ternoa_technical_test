@@ -1,3 +1,4 @@
+import Collection from "@/components/Collection";
 import Header from "@/components/Header";
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
@@ -44,6 +45,7 @@ const Home = () => {
   return (
     <div>
       <Header />
+      <Collection />
       {/* <button onClick={handlePreviousPage}>Page précédente</button>
       <button onClick={handleNextPage}>Page suivante</button> */}
     </div>
