@@ -40,7 +40,6 @@ const Cards: React.FC<CardsProps> = ({ imageUrl, name, attributes }) => {
           />
           <div className="p-4 flex flex-col flex-grow">
             <h3 className="font-semibold text-lg">{name}</h3>
-            <p className="font-medium text-base mt-auto">Price:</p>
           </div>
         </>
       ) : (
