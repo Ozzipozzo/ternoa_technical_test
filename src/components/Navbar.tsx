@@ -31,9 +31,9 @@ const Navbar: React.FC = () => {
             <button className="bg-[#3e24b6] text-white px-8 py-2 rounded-3xl">
               Upload
             </button>
-            <button className="bg-white text-[#3e24b6] border border-[#3e24b6] px-4 py-2 rounded-3xl">
+            <div className="bg-white text-[#3e24b6] border border-[#3e24b6] px-4 py-2 rounded-3xl">
               <ConnectWallet />
-            </button>
+            </div>
           </div>
         </div>
       </nav>
