@@ -1,6 +1,15 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import Navbar from "@/components/Navbar";
+import { FavoritesProvider } from "@/context/FavoritesContext";
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <FavoritesProvider>
+        <Navbar />
+        <Component {...pageProps} />;
+      </FavoritesProvider>
+    </>
+  );
 }

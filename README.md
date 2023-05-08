@@ -1,38 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NFT Gallery with Wallet Connection
+
+This project is an NFT gallery built with TypeScript and Next.js that allows users to interact with the 20Mint collection. It fetches NFT data from an API, displays the NFTs on the front-end with pagination, and provides a wallet connection for users to sign transactions and interact with the server. Users can also like NFTs, and the liked status is saved across page refreshes. The project also includes a page to display which address(es) have liked each NFT.
+
+## Features
+
+- TypeScript and Next.js integration
+- Fetches NFT data from the 20Mint collection using an API
+- Displays NFTs with pagination, including image and properties
+- Wallet connection with signature for user authentication
+- Like system for NFTs with persistence
+- Page displaying addresses that liked each NFT, including the number of likes
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
+- Node.js installed
+- Alchemy API key
+
+### Obtaining an Alchemy API Key
+
+To obtain an Alchemy API key, you'll need to set up an app within the Alchemy platform. Make sure to choose the Ethereum Mainnet as the network for your app. For more information on setting up an app on Alchemy, please follow the [official documentation](https://docs.alchemy.com/alchemy/introduction/getting-started).
+
+### Installation
+
+1. Clone the repository
+
+```
+git clone https://github.com/Ozzipozzo/ternoa_technical_test
+```
+
+2. Install dependencies
+
+```
+npm install
+```
+
+3. Create a \`.env.local\` file in the root directory of the project
+
+4. Copy the contents of the \`env.sample\` file into the \`.env.local\` file and replace the values with your Alchemy API key and contract address:
+
+```
+ALCHEMY_API_KEY=YOUR_ALCHEMY_API_KEY
+CONTRACT_ADDRESS="0xB003ce92F3b2A8F3dd99207C351eAf05BC605262"
+```
+
+5. Run the development server
+
+```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Browse the NFT gallery and interact with the NFTs displayed. Connect your wallet to sign transactions and like NFTs. The liked status of NFTs will persist across page refreshes. Visit the dedicated page to see the addresses that have liked each NFT, as well as the total number of likes for each NFT.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+None
