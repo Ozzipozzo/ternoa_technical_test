@@ -27,30 +27,30 @@ To obtain an Alchemy API key, you'll need to set up an app within the Alchemy pl
 
 1. Clone the repository
 
-\`\`\`
+```
 git clone https://github.com/Ozzipozzo/ternoa_technical_test
-\`\`\`
+```
 
 2. Install dependencies
 
-\`\`\`
+```
 npm install
-\`\`\`
+```
 
 3. Create a \`.env.local\` file in the root directory of the project
 
 4. Copy the contents of the \`env.sample\` file into the \`.env.local\` file and replace the values with your Alchemy API key and contract address:
 
-\`\`\`
+```
 ALCHEMY_API_KEY=YOUR_ALCHEMY_API_KEY
 CONTRACT_ADDRESS="0xB003ce92F3b2A8F3dd99207C351eAf05BC605262"
-\`\`\`
+```
 
 5. Run the development server
 
-\`\`\`
+```
 npm run dev
-\`\`\`
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
