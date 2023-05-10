@@ -45,14 +45,14 @@ const Cards: React.FC<CardsProps> = ({ imageUrl, name, attributes }) => {
 
   return (
     <div
-      className={`bg-white shadow-md rounded-lg w-64 h-96 overflow-hidden flex flex-col transform transition-all duration-500 cursor-pointer ${
+      className={`bg-white shadow-md rounded-lg md:w-64 md:h-96 overflow-hidden flex flex-col transform transition-all duration-500 cursor-pointer ${
         isFlipped ? "rotate-y-180" : ""
       } ${isHovered && !isFlipped ? "rotate-1" : ""}`}
       onClick={handleFlip}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="relative">
+      <div className="">
         {!isFlipped ? (
           <>
             <Image
