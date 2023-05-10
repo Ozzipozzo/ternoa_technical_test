@@ -45,7 +45,7 @@ const Cards: React.FC<CardsProps> = ({ imageUrl, name, attributes }) => {
 
   return (
     <div
-      className={`bg-white shadow-md rounded-lg md:w-64 md:h-96 overflow-hidden flex flex-col transform transition-all duration-500 cursor-pointer ${
+      className={`bg-white shadow-md font-cereal rounded-lg md:w-64 md:h-96 overflow-hidden flex flex-col transform transition-all duration-500 cursor-pointer ${
         isFlipped ? "rotate-y-180" : ""
       } ${isHovered && !isFlipped ? "rotate-1" : ""}`}
       onClick={handleFlip}
@@ -69,15 +69,25 @@ const Cards: React.FC<CardsProps> = ({ imageUrl, name, attributes }) => {
             </div>
           </>
         ) : (
-          <div className="p-4 flex flex-col flex-grow">
-            <h3 className="font-semibold text-lg">Attributes</h3>
-            <ul className="mt-4 space-y-2">
-              {attributes.map((attribute, index) => (
-                <li key={index}>
-                  {attribute.trait_type}: {attribute.value}
-                </li>
-              ))}
-            </ul>
+          <div className="p-4 flex flex-col flex-grow font-cereal">
+            <h3 className="font-semibold text-lg text-[#3e24b6] mb-4">
+              Attributes
+            </h3>
+            <div className="mt-4 overflow-y-auto max-h-[300px]">
+              <ul className="space-y-2">
+                {attributes.map((attribute, index) => (
+                  <li
+                    key={index}
+                    className="py-2 px-4 bg-white text-[#3e24b6] shadow-md border border-[#c0bdbd] rounded-lg"
+                  >
+                    <span className="font-semibold">
+                      {attribute.trait_type}:
+                    </span>{" "}
+                    {attribute.value}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         )}
         <button
