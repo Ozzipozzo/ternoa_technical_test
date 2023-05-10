@@ -5,7 +5,7 @@ const ConnectWallet: React.FC = () => {
   const [accounts, setAccounts] = useState<string[]>([]);
   const [signResult, setSignResult] = useState<string>("");
   const [verifyDisabled, setVerifyDisabled] = useState<boolean>(true);
-  
+
   const connectWalletHandler = async () => {
     if ((window as any).ethereum) {
       try {
@@ -44,6 +44,13 @@ const ConnectWallet: React.FC = () => {
   };
 
   useEffect(() => {
+    const storedAccount = localStorage.getItem("account");
+    if (storedAccount) {
+      setAccounts([storedAccount]);
+    }
+  }, []);
+
+  useEffect(() => {
     if (accounts.length > 0) {
       console.log("Connected accounts:", accounts);
       personalSignHandler();
@@ -52,11 +59,16 @@ const ConnectWallet: React.FC = () => {
   }, [accounts]);
   return (
     <>
-      {accounts.length > 0 ? (
+      {accounts.length > 0 && localStorage.getItem("account") ? (
         <div className="flex items-center">
           <span className="inline-block w-2.5 h-2.5 bg-green-500 rounded-full mr-2"></span>
           <p>
-            Account: {accounts[0].slice(0, 6)}...{accounts[0].slice(-4)}
+            Account:{" "}
+            {accounts[0]?.slice(0, 6) ||
+              localStorage.getItem("account")?.slice(0, 6)}
+            ...
+            {accounts[0]?.slice(-4) ||
+              localStorage.getItem("account")?.slice(-4)}
           </p>
         </div>
       ) : (
