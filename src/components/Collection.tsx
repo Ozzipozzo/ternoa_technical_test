@@ -10,7 +10,6 @@ const Collection: React.FC = () => {
     { gateway: string; attributes: Attributes[]; name: string }[] | null
   >(null);
   const [pageKey, setPageKey] = useState<string>("");
-  const [previousPageKeys, setPreviousPageKeys] = useState<string[]>([]);
 
   useEffect(() => {
     fetch(`/api/nfts?page=${pageKey}`)
@@ -59,9 +58,9 @@ const Collection: React.FC = () => {
 
   return (
     <>
-      <div className="w-[70%] m-auto mt-[10rem]">
+      <div className="md:w-[70%] m-auto mt-[10rem]">
         <h1 className="font-extrabold text-4xl">NFTs Collection</h1>
-        <div className="grid grid-cols-5 gap-8 mt-[2rem]">
+        <div className="grid grid-cols-2 gap-4 sm:grid sm:grid-cols-2 md:grid md:grid-cols-3 md:gap-8 mt-[2rem] lg:grid-cols-4 xl:grid-cols-5 lg:grid">
           {metaData &&
             Object.entries(metaData).map(([key, nft]) => (
               <Cards
@@ -73,7 +72,7 @@ const Collection: React.FC = () => {
             ))}
         </div>
         <div className="flex justify-center space-x-4 mt-8">
-          {metaData &&  metaData.length > 20 &&(
+          {metaData && metaData.length > 20 && (
             <button
               onClick={handleLoadLess}
               className="bg-white text-[#3e24b6] border border-[#3e24b6] px-4 py-2 rounded-3xl"
@@ -88,8 +87,6 @@ const Collection: React.FC = () => {
             Load More NFTs
           </button>
         </div>
-        {/* <button onClick={handlePreviousPage}>Page précédente</button>
-      <button onClick={handleNextPage}>Page suivante</button> */}
       </div>
     </>
   );
